@@ -1,0 +1,150 @@
+//@use "../base/index" as *;
+
+.home{
+
+    &__img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: 83%;
+    }
+
+    &__container{
+        position: relative;
+        height: calc(100vh - 3rem);
+        align-content: center;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    &__data{
+        display: flex;
+        flex-direction: column;
+        gap: $mb-75;
+        grid-column: 1/7;
+    }
+
+    &__data-subtitle,
+    &__data-title,
+    &__social-link,
+    &__info{
+        color: $white-color;
+    }
+
+    &__data-title{
+        font-size: $biggest-font-size;
+        font-weight: $font-medium;
+        line-height: 1.1;
+
+    }
+    &__social{
+        display: flex;
+        flex-direction: column;
+        grid-row: 3/4;
+        grid-column: 1/3;
+        row-gap: 1.5rem;
+    }
+    &__social-link{
+        font-size: 1.2rem;
+        width: max-content;
+        transition: transform .3s ease ;
+        &:hover{
+            transform: scale(1.3);
+        }
+    }
+
+    &__info{
+        background-color: $first-color;
+        display: flex;
+        justify-self: right;
+        width: 65vw;
+        max-width:275px;
+        padding: 1rem;
+        align-items: center;
+        column-gap: 1.5rem;
+        grid-row: 3/4;
+        grid-column: 3/8;
+    }
+    
+    &__info-title{
+        font-size: $small-size;
+        font-weight: $font-semi-bold;
+
+    }
+
+    &__info-img{
+        //clip-path: inset(0);
+        transition: all .3s ease-in-out;
+        &:hover{
+            filter: brightness(1.1);
+            //clip-path: inset(10px 10px round 50px 0);
+        }
+    }
+    &__action{
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .button--link{
+        color: $white-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: .5rem;
+    
+    }
+}
+
+@media(min-width: 768px) {
+    .home{
+        &__info{
+            grid-row: 4/5;
+        }
+
+        &__social{
+            grid-row: 4/5;
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .home{
+        &__data{
+            grid-column: 1/6;
+        }
+        &__data-title{
+            font-size: 3.5rem;
+            @media(min-width:1200px){
+                font-size:4rem ;
+            }
+        }
+        &__data-subtitle{
+            font-size: 1.2rem;
+            
+        }
+
+        .button{
+            font-size: 1.2rem;
+        }
+        &__social{
+            flex-direction: row;
+            column-gap: 2rem;
+            grid-row: 5/5;
+            align-self:end;
+        }
+        &__info{
+            padding: 1.5rem;
+            grid-row: 5/5
+        }
+        &__info-title{
+            font-size: 1rem;
+        }
+    }
+
+    .nav{
+        height: 4.5rem;
+    }
+
+} 

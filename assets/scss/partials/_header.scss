@@ -1,0 +1,214 @@
+// Header //
+
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-fixed;
+    background-color: transparent;
+
+    &.scroll{
+        background-color: $body-color;
+        box-shadow: 0 0 4px hsla($hue-color, 64%, 15%, .15);
+    }
+
+    &.scroll .nav__logo, .nav__toggle{
+        color: $title-color;
+    }
+}
+
+// Nav //
+
+.nav{
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo,
+    &__toggle{
+        color: $white-color;
+
+    }
+
+    &__logo{
+        font-weight: $font-semi-bold;
+    }
+
+    &__logo--plus{
+        font-style: italic;
+    }
+
+    &__toggle{
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    &__menu{
+        position: relative;
+
+    }
+    &__link{
+        position: relative;
+        &.active{
+            color: $title-color;
+        }
+        &.active::after{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $title-color;
+        }
+    }
+
+    &__dark{
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+        position: absolute;
+        bottom: 9rem;
+        left: 3rem;
+    }
+
+    .change-theme,
+    .change-theme-name{
+        color: $text-color;
+    }
+    .change-theme-name{
+        font-size: $small-size;
+    }
+    .change-theme{
+        cursor: pointer;
+    }
+}
+
+@media(max-width:767px){
+    .nav{
+        &__menu{
+            position: fixed;
+            background-color: $body-color;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100%;
+            box-shadow: -1px 0 4px hsla($hue-color, 64%, 15%, .15);
+            padding: 3rem;
+            transition: .4s;
+            &.show{
+                right: 0;
+            }
+        }
+
+        &__list{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2.5rem;
+        }
+
+        &__link{
+            color: $text-color-light;
+            font-weight: $font-semi-bold;
+            text-transform: uppercase;
+
+            &:hover{
+                color: $text-color;
+            }
+        }
+
+        &__close{
+            position: absolute;
+            top: .75rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: $title-color;
+            cursor: pointer;
+        }
+    }
+}
+
+@media(min-width: 768px){
+
+    .header{
+        &.scroll .nav__link,
+        &.scroll .change-theme{
+            color: $text-color;
+            &.active::after{
+                background: $text-color;
+            }
+        }
+           
+    }
+  
+    
+    .nav{
+        &__link{
+            color: $white-color;
+            text-transform: initial;
+            font-size: 1rem;
+            &.active{
+                color: $white-color;
+            }
+
+            &.active::after{
+                background: $white-color;
+            }   
+        }
+        &__logo{
+            font-size: 1rem;
+        }
+
+        &__dark{
+            position: initial;
+            margin-left: 2rem;
+        }
+
+        .change-theme{
+            color: $white-color;
+            font-size: 1rem;
+        }
+        &__menu{
+            display: flex;
+            align-items: center;
+        }
+        &__list{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 4rem;
+        }
+        &__toggle,
+        &__close,
+        .change-theme-name{
+            display: none;
+        }
+    }
+
+    body{
+        &.dark-mode{
+            .nav{
+                &__menu{
+                    background: none;
+                }
+                &__link{
+                    color: $white-color;
+                    &.active::after{
+                        background: $white-color;
+                    }
+                }
+            }
+            .header{
+                &.scroll .nav__link,
+                &.scroll .change-theme{
+                    color: $white-color;
+                    &.active::after{
+                        background: $white-color;
+                    }
+                }
+                   
+            }
+        }
+    }
+}

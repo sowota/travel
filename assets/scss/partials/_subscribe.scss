@@ -1,0 +1,126 @@
+.subscribe{
+    &__bg{
+        background-color: $first-color;
+        padding: 2.5rem 0;
+    }
+    &__title,
+    &__description{
+        color: $white-color;
+    }
+    &__description{
+        text-align: center;
+        margin-bottom: $mb-2;
+    }
+    &__form{
+        padding: .5rem;
+        display: flex;
+        justify-content: space-between;
+        background-color: $white-color;
+        @media(min-width: 768px){
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+    &__input{
+        width: 70%;
+        padding-right: .5rem;
+        color: $text-color;
+    }
+}
+
+.sponsor{
+    &__container{
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        justify-items: center;
+        row-gap: 3.5rem;
+
+    }
+    &__img{
+        width: 90px;
+        filter: invert(.7);
+        transition: .3s;
+    }
+    &__content{
+        &:hover .sponsor__img{
+            filter: invert(.5);
+        }
+    }
+}
+
+.footer{
+    &__container{
+        row-gap: 5rem;
+    }
+    &__content{
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        row-gap: 2rem;
+    }
+    &__data-1{
+        display: grid;
+        row-gap: $mb-2;
+    }
+
+    &__social{
+        font-size: 1.25rem;
+        color: $title-color;
+        margin-right: $mb-1;
+    }
+    &__subtitle{
+        margin-bottom: $mb-1;
+    }
+    &__item{
+        margin-bottom: $mb-75;
+    }
+    &__link{
+        color: $text-color;
+        &:hover{
+            color: $title-color;
+        }
+    }
+    &__rights{
+        display: grid;
+        justify-content:center ;
+        align-items: center;
+        @media(min-width:768px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__copy{
+        justify-self:center;
+        color:$text-color-light;
+        @media(min-width:768px){
+            justify-self: start;
+        }
+    }
+    &__terms-link{
+        color:$text-color-light;
+        font-size: $small-size;
+        &:hover{
+            color: $text-color;
+        }
+    }
+}
+
+.scroll-up{
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    background: $first-color;
+    padding: .5rem;
+    display: flex;
+    opacity: .9;
+    z-index: 10;
+    transition: .4s;
+    &__icon{
+        color: $white-color;
+        font-weight: $font-semi-bold;
+    }
+
+    &:hover{
+        background: $first-color;
+        opacity: 1;
+    }
+    &.show{
+        bottom: 5rem;
+    }
+}

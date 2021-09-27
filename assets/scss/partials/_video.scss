@@ -1,0 +1,26 @@
+.video{
+    &__description{
+        text-align: center;
+    }
+
+    &__content{
+        position: relative;
+        @media(min-width:1024px){
+            max-width: 55vw;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+    }
+    &__button{
+        position: absolute;
+        bottom: -1rem;
+        right: 1rem;
+        padding: 1rem 1.5rem;
+        display: grid;
+        place-items: center;
+    }
+
+    &__button-icon{
+        font-size: 1.4rem;
+    }
+}

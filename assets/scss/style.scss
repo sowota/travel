@@ -1,0 +1,16 @@
+
+
+@import "../scss/base/index" ;
+@import "../scss/partials/index"; 
+
+@keyframes anime-1 {
+    from{
+        transform: translateY(-70%);
+        opacity:0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

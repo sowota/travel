@@ -1,0 +1,50 @@
+
+$header-height:3rem;
+
+:root{
+    height:$header-height;
+}
+
+
+// Light Mode
+$hue-color:190;
+
+$first-color: hsl($hue-color, 64%, 22%);
+$first-color-second: hsl($hue-color, 64%, 22%);
+$first-color-alt: hsl($hue-color, 64%, 15%);
+$title-color: hsl($hue-color, 64%, 18%);
+$text-color: hsl($hue-color, 24%, 35%);
+$text-color-light: hsl($hue-color, 8%, 60%);
+$input-color: hsl($hue-color, 24%, 97%);
+$body-color: hsl($hue-color, 100%, 99%);
+$white-color: #fff;
+$scroll-bar-color: hsl($hue-color, 12%, 90%);
+$scroll-thumb-color: hsl($hue-color, 12%, 75%);
+
+
+
+// Margin
+
+$mb-25: .25rem;
+$mb-5: .5rem;
+$mb-75: .75rem;
+$mb-1: 1rem;
+$mb-1-25: 1.25rem;
+$mb-1-5: 1.5rem;
+$mb-2: 2rem;
+$mb-2-5: 2.5rem;
+
+// z index
+
+$z-tooltoip:10;
+$z-fixed: 100;
+
+
+// Hover overlay 
+
+$img-transition:.3s;
+$img-hidden: hidden;
+$img-scale: scale(1.1);
+
+
+
